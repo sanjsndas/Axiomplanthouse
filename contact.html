@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Connect with Axiom Plant House – reach our gardening experts, visit the nursery, or send us a message. Black soil & cream blossoms await your inquiry.">
+    <title>Axiom Plant House | Contact & Cultivator's Concierge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a0e;  /* deep blackened earth */
+            font-family: 'Garamond', 'Times New Roman', Georgia, serif;
+            color: #f5f2e0;
+            line-height: 1.55;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #1e1c10;
+            box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        }
+
+        /* header branding (consistent with main site) */
+        .header {
+            background: #0f0e07;
+            padding: 2rem 2rem 1rem;
+            border-bottom: 2px solid #d6cd9a;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            letter-spacing: 2px;
+            font-weight: normal;
+            color: #efe3b0;
+            text-shadow: 2px 2px 0px #2f2b14;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #cfc68b;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .navbar {
+            background: #22200f;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            padding: 0.9rem;
+            border-bottom: 1px solid #d6cd9a60;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(4px);
+        }
+
+        .navbar a {
+            color: #f5efcf;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar a:hover {
+            border-bottom-color: #e2cf7a;
+            color: #fff3c9;
+            transform: translateY(-2px);
+        }
+
+        /* main contact layout */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .contact-info {
+            flex: 1.2;
+            background: #232011;
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid #cfbc7350;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+
+        .contact-form {
+            flex: 1.8;
+            background: #1f1d0f;
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid #cfbc7350;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: normal;
+            border-left: 8px solid #dac17c;
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #f7eecd;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin: 1rem 0 0.8rem;
+            color: #e8daac;
+            font-weight: 500;
+        }
+
+        .contact-detail-block {
+            margin: 2rem 0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            background: #2a281b;
+            padding: 0.8rem 1.2rem;
+            border-radius: 60px;
+            transition: all 0.2s;
+            border: 1px solid #4a432a;
+        }
+
+        .detail-item:hover {
+            background: #353121;
+            transform: translateX(5px);
+            border-color: #e9cf86;
+        }
+
+        .detail-icon {
+            font-size: 1.8rem;
+        }
+
+        .detail-text {
+            flex: 1;
+        }
+
+        .detail-text strong {
+            color: #f1e5bc;
+            font-size: 1.1rem;
+        }
+
+        .opening-hours {
+            background: #2c281a;
+            border-radius: 28px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 6px solid #e2cf7a;
+        }
+
+        .opening-hours p {
+            margin: 0.3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #e9dba9;
+            letter-spacing: 0.3px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: #2e2b1c;
+            border: 1px solid #b8a86b;
+            color: #fef7df;
+            font-family: 'Garamond', 'Times New Roman', serif;
+            font-size: 1rem;
+            border-radius: 24px;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #f7e2a4;
+            box-shadow: 0 0 0 2px rgba(215, 195, 110, 0.4);
+            background: #38341f;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .btn-submit {
+            background: #3f3822;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #faf0cc;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: 'Garamond', serif;
+            letter-spacing: 1px;
+            width: 100%;
+            border: 1px solid #cfb561;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background: #5a4d2c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border-color: #eed896;
+            color: #fffae9;
+        }
+
+        .map-container {
+            margin: 2rem 0 1rem;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 2px solid #cbaf6b;
+            height: 240px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .faq-mini {
+            margin-top: 2rem;
+            background: #1e1c0e;
+            border-radius: 28px;
+            padding: 1.2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            background: #2b281a;
+            padding: 0.6rem 1rem;
+            border-radius: 32px;
+        }
+
+        .faq-mini summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #eedfaa;
+        }
+
+        hr {
+            border-color: #594f2e;
+            margin: 1rem 0;
+        }
+
+        footer {
+            background: #0c0b04;
+            padding: 2rem 2rem 2.5rem;
+            border-top: 2px solid #d6c37c;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .footer-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-details div {
+            background: #201e0e;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .success-message {
+            background: #2b4520;
+            border-left: 8px solid #dce88b;
+            color: #eef5d6;
+            padding: 1rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 1.2rem;
+            display: none;
+        }
+
+        @media (max-width: 850px) {
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            .header h1 {
+                font-size: 2.3rem;
+            }
+            .navbar {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🌱 AXIOM PLANT HOUSE</h1>
+        <p>Where Earth's Wisdom meets the art of cultivation — black soil & cream blossoms</p>
+    </div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+    </div>
+
+    <div class="main-content" style="padding: 2rem 2.5rem;">
+        <div class="contact-wrapper">
+            <!-- LEFT: contact & nursery details -->
+            <div class="contact-info">
+                <h2>◈  Cultivator's Concierge  ◈</h2>
+                <p style="margin-bottom: 1.5rem;">Reach out to the stewards of black earth & cream blossoms. Whether you seek botanical advice, wholesale inquiries, or simply wish to share your garden story — our herbalists and horticulturists are eager to connect.</p>
+                
+                <div class="contact-detail-block">
+                    <div class="detail-item">
+                        <span class="detail-icon">🏡</span>
+                        <div class="detail-text">
+                            <strong>📍 Axiom Sanctuary Nursery</strong><br>
+                            147 Evergreen Lane, Meadowshire, GL 87542<br>
+                            <span style="font-size:0.85rem;">(Heritage Gardens District)</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📞</span>
+                        <div class="detail-text">
+                            <strong>🌿 Gardener's Hotline</strong><br>
+                            +1 (800) 459-2236  |  +44 20 7946 0138<br>
+                            <span style="font-size:0.8rem;">Mon–Sat: 9AM – 5PM (local time)</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">✉️</span>
+                        <div class="detail-text">
+                            <strong>Root Correspondence</strong><br>
+                            hello@axiomplanthouse.com<br>
+                            press@axiomplanthouse.com (media & collaborations)
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📠</span>
+                        <div class="detail-text">
+                            <strong>Fax (Heritage)</strong><br>
+                            +1 (800) 459-2237
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opening-hours">
+                    <h3>⏳ Nursery & Library Hours</h3>
+                    <p>🌼 Monday – Friday: 9:00 – 18:00</p>
+                    <p>🌻 Saturday: 10:00 – 16:00 (Cream Tea & Seed Swap)</p>
+                    <p>🍂 Sunday: Closed (soil & soul restoration)</p>
+                    <p><em>Special “Moonlight Garden” tours every full moon — registration via phone.</em></p>
+                </div>
+
+                <div class="map-container">
+                    <!-- Static styled map placeholder (ethical OpenStreetMap representation) -->
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-2.231%2C51.684%2C-2.181%2C51.704&layer=mapnik&marker=51.694,-2.206" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <p style="font-size: 0.85rem; text-align: center; margin-top: 0.5rem;">✦ Find us near the ancient oak grove — follow the cream-colored signposts ✦</p>
+            </div>
+
+            <!-- RIGHT: contact form & additional notes -->
+            <div class="contact-form">
+                <h2>◈  Send a Message  ◈</h2>
+                <p>Share your planting dreams or ask about heirloom seeds, soil consultations, and our black & cream design packages. We reply within 2 sunrises.</p>
+                <div id="formSuccessMsg" class="success-message">
+                    ✓ Thank you, fellow cultivator! Your message has been rooted. Expect a reply from our herbalist within 48 hours. 🌿
+                </div>
+                <form id="axiomContactForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="fullname">☘️ Full name *</label>
+                        <input type="text" id="fullname" name="fullname" required placeholder="e.g., Elara Greenmantle">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">🌾 Email address *</label>
+                        <input type="email" id="email" name="email" required placeholder="hello@blossom.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">🍃 Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="Gardening Inquiry">Gardening Inquiry / Plant Advice</option>
+                            <option value="Nursery Visit & Workshops">Nursery Visit & Workshops</option>
+                            <option value="Wholesale & Partnership">Wholesale & Partnership</option>
+                            <option value="Press & Media">Press & Media</option>
+                            <option value="Other (Soil & Soul)">Other (Soil & Soul)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">📜 Your message (tell us about your garden)</label>
+                        <textarea id="message" name="message" required placeholder="Describe your planting zone, current challenges, or what blooms you cherish..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="prefer-contact">🌱 Preferred contact method</label>
+                        <select id="prefer-contact" name="prefer-contact">
+                            <option value="email">Email (fastest)</option>
+                            <option value="phone">Phone call during business hours</option>
+                            <option value="carrier pigeon">Carrier pigeon (symbolic)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">✉️ Send Cultivation Note ✉️</button>
+                    <p style="font-size: 0.75rem; text-align: center; margin-top: 1rem;">By sending, you consent to our black-soil privacy practices. We never share your data.</p>
+                </form>
+
+                <div class="faq-mini">
+                    <h3>🌿 Quick Answers (before you write)</h3>
+                    <details>
+                        <summary>📦 Do you ship rare seeds internationally?</summary>
+                        <p>Yes, we ship heirloom, organic & cream-blossom seeds to most temperate regions. Phytosanitary certificates available for select destinations. Please email us with your location.</p>
+                    </details>
+                    <details>
+                        <summary>🌎 Can I book a garden consultation?</summary>
+                        <p>Absolutely. Our senior horticulturists offer on-site and virtual consultations (black soil analysis, design plans). Use the form with "Gardening Inquiry" and we'll schedule a deep dive.</p>
+                    </details>
+                    <details>
+                        <summary>🤝 Volunteer or internship programs?</summary>
+                        <p>We welcome earth stewards every spring & autumn. Check our workshops page or send us a message — we'd love to hear about your passion for regenerative gardening.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <!-- additional unique content: extended contact and visitor guidelines --->
+        <section style="margin-top: 2.5rem; background: #262315; border-radius: 32px; padding: 1.8rem;">
+            <h2>◈ Arrival & Garden Etiquette ◈</h2>
+            <p>Our nursery is nestled within the Axiom Black & Cream Arboretum — a living museum of rare dark foliage and ivory blossoms. When you visit, you'll find self-guided trails, ‘silence zones’ for pollinator observation, and the Cream Pot Café serving herbal infusions. We encourage visitors to bring a journal and sketch the interplay of shadow and light. Wheelchair accessible paths, and children accompanied by adults are welcome to participate in seed-planting activities. For large groups (10+), kindly notify us at least 3 days ahead using our contact form or hotline. Also, every first Saturday of the month we host a “Compost & Cultivation” open forum — free and open to all who cherish the living soil.</p>
+            <div class="highlight" style="background: #302c19; padding: 1rem; border-radius: 24px; margin-top: 1rem;">
+                <p><strong>📣 Nursery news:</strong> Starting June 2025, Axiom Plant House introduces a “Black Gold Soil Clinic” — bring a sample from your garden, and our soil sommeliers will prescribe custom amendments, from cream-hued calcined clay to mushroom compost. Walk-in Wednesdays 1–4 PM.</p>
+            </div>
+        </section>
+        
+        <!-- extra resource: regional ambassadors -->
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0 1rem; justify-content: space-between;">
+            <div style="flex:1; background:#1f1d0f; border-radius: 28px; padding: 1.2rem; border:1px solid #998f56;">
+                <h3 style="margin-top:0;">🌎 Regional Envoys</h3>
+                <p>Pacific Northwest: <strong>fernguild@axiom.com</strong><br>
+                UK & Europe: <strong>creamroses@axiom.co.uk</strong><br>
+                Mediterranean & drylands: <strong>xeriscape@axiom.com</strong></p>
+            </div>
+            <div style="flex:1; background:#1f1d0f; border-radius: 28px; padding: 1.2rem; border:1px solid #998f56;">
+                <h3 style="margin-top:0;">🕯️ Herbarium Requests</h3>
+                <p>Our pressed specimen library contains 1,200+ species (many cream-blossom rarities). Researchers and artists: schedule an appointment via herbarium@axiomplanthouse.com</p>
+            </div>
+            <div style="flex:1; background:#1f1d0f; border-radius: 28px; padding: 1.2rem; border:1px solid #998f56;">
+                <h3 style="margin-top:0;">📬 Postal Subscriptions</h3>
+                <p>Receive seasonal "Cream Envelope" — seed packets, pressed flower letters, and planting guides. Subscribe via mail with $20 annual fee. Details upon request.</p>
+            </div>
+        </div>
+
+        <div class="word-counter-note" style="text-align: right; font-size:0.75rem; opacity:0.7; margin: 1.5rem 0 0rem;">
+            ✦ Axiom Plant House contact compendium — every inquiry is honored with ancient horticultural patience. ✦
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-details">
+            <div>📍 <strong>Address:</strong> Axiom Plant House, 147 Evergreen Lane, Meadowshire, GL 87542</div>
+            <div>📞 <strong>Number:</strong> +1 (800) 459-2236 | +44 20 7946 0138</div>
+        </div>
+        <hr>
+        <p style="font-size:0.9rem;">© 2025 Axiom Plant House — Cultivating black earth & cream blossoms since 1987. All rights reserved. Visit our nursery for organic seedlings, workshops, and rare plant sales.</p>
+        <p style="margin-top: 0.5rem;">🌿 “In the garden, the darkest soil gives rise to the softest cream flower.” 🌼</p>
+    </footer>
+</div>
+
+<!-- simple client-side form handling with success message simulation, no actual data submission to backend for demo -->
+<script>
+    (function() {
+        const form = document.getElementById('axiomContactForm');
+        const successDiv = document.getElementById('formSuccessMsg');
+
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Basic validation
+                const name = document.getElementById('fullname').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                if (!name || !email || !message) {
+                    alert('🌾 Please fill in your name, email, and message — the soil requires all three elements.');
+                    return;
+                }
+                if (!email.includes('@') || !email.includes('.')) {
+                    alert('✉️ Please provide a valid email address, so we can send our cream-petal reply.');
+                    return;
+                }
+                // Show success message & optionally reset form
+                successDiv.style.display = 'block';
+                form.reset();
+                // Scroll success into view smoothly
+                successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // after 5 seconds, fade success message? optional
+                setTimeout(() => {
+                    successDiv.style.opacity = '0';
+                    setTimeout(() => {
+                        successDiv.style.display = 'none';
+                        successDiv.style.opacity = '1';
+                    }, 500);
+                }, 6000);
+            });
+        }
+    })();
+</script>
+</body>
+</html>
